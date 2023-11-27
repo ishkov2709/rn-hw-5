@@ -4,6 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const PublicItem = ({ item, navigation }) => {
   const navigateToMap = (location = null) => {
+    console.log(location);
     if (!location) return;
     const handler = () => {
       navigation.navigate('Map', { location });

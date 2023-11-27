@@ -26,6 +26,7 @@ const CreatePostsScreen = ({ navigation }) => {
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
+      console.log(status);
       if (status !== 'granted') {
         console.log('Permission to access location was denied');
       }
@@ -48,6 +49,8 @@ const CreatePostsScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
+  console.log(location);
+
   return (
     <Formik
       initialValues={{ name: '', place: '' }}
@@ -60,7 +63,7 @@ const CreatePostsScreen = ({ navigation }) => {
             image,
             id: nanoid(),
             comments: [],
-            location: location ?? null,
+            location,
           },
         ]);
         resetForm();
