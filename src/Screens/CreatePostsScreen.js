@@ -49,8 +49,6 @@ const CreatePostsScreen = ({ navigation }) => {
     });
   }, [navigation]);
 
-  console.log(location);
-
   return (
     <Formik
       initialValues={{ name: '', place: '' }}
